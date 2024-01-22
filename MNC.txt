@@ -1,0 +1,311 @@
+Q1 1)
+Problem Statement – Chaman planned to choose a four digit lucky number for his car. His
+lucky numbers are 3,5 and 7. Help him find the number, whose sum is divisible by 3 or 5 or
+7. Provide a valid car number, Fails to provide a valid input then display that number is not a
+valid car number.
+Note : The input other than 4 digit positive number[includes negative and 0] is considered as
+invalid.
+Refer the samples, to read and display the data.
+Sample Input 1:
+Enter the car no:1234
+Sample Output 1:
+Lucky Number
+Sample Input 2:
+Enter the car no:1214
+Sample Output 2:
+Sorry its not my lucky number
+Sample Input 3:
+Enter the car no:14
+Sample Output 3:
+14 is not a valid car number
+________________________________________________
+Code
+//to choose Lucky Numbr of Car
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the Number to Count the Number and sum of Digit");
+	int num=sc.nextInt();
+	int num1=num;
+	int sum=0;
+	int count=0;
+		while(num1>0){
+	    num1=num1/10;
+	    count=count+1;
+	}
+	if(count==4){
+	while(num>0){
+	    int temp=num%10;
+	    sum=sum+temp;
+	    num=num/10;	}
+	if(sum%3==0||sum%5==0||sum%7==0){System.out.println(num+ "is Lucky Number");}
+	else{System.out.println(num+"is not Lucky number");}
+	}
+	    else{System.out.println(num+ "is not a Valid Number");}
+	}
+}
+_____________________________________________________
+Q2
+2)
+XYZ Technologies is in the process of increment the salary of the employees. This
+increment is done based on their salary and their performance appraisal rating.
+If the appraisal rating is between 1 and 3, the increment is 10% of the salary.
+If the appraisal rating is between 3.1 and 4, the increment is 25% of the salary.
+If the appraisal rating is between 4.1 and 5, the increment is 30% of the salary.
+Help them to do this, by writing a program that displays the incremented salary. Write a
+class “IncrementCalculation.java” and write the main method in it.
+Note : If either the salary is 0 or negative (or) if the appraisal rating is not in the range 1 to
+5 (inclusive), then the output should be “Invalid Input”.
+Sample Input 1 :
+Enter the salary
+8000
+
+Enter the Performance appraisal rating
+3
+Sample Output 1 :
+8800
+Sample Input 2 :
+Enter the salary
+7500
+Enter the Performance appraisal rating
+4.3
+Sample Output 2 :
+9750
+Sample Input 3 :
+Enter the salary
+-5000
+Enter the Performance appraisal rating
+6
+Sample Output 3 :
+Invalid Input
+___________________________________________________________
+CODE
+//2. Salary Increment based on Appraisal Ratings.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);    
+	System.out.println("Enter your Salary in USD $ ");
+	int salary=sc.nextInt();
+	System.out.println("Enter your Appraisal Ratings. Ex- 2 or 2.1 ");
+	float rating=sc.nextFloat();
+	if(salary<=0 || rating<1 ||rating>5){System.out.println("INVALID INPUT");}
+	else if(rating>1&&rating<=3){
+	    float increment=(float)(salary*0.10);
+	    float actual_salary=salary+increment;
+	    System.out.println("Your New Salary based on Appraisal Rating of "+rating+" is "+actual_salary+"");
+	}
+	else if(rating>3&&rating<=4){
+	    float increment=(float)(salary*0.25);
+	    float actual_salary=salary+increment;
+	    System.out.println("Your New Salary based on Appraisal Rating of "+rating+" is "+actual_salary+""); 
+	}
+	else if(rating>4&&rating<=5){
+	    float increment=(float)(salary*0.30);
+	    float actual_salary=salary+increment;
+	    System.out.println("Your New Salary based on Appraisal Rating of "+rating+" is "+actual_salary+"");
+	}
+	else if(salary<=0 || rating<1 ||rating>5){System.out.println("INVALID INPUT");}
+	}}
+
+
+____________________________________________________________________________________________________________
+3)Problem Statement – Goutam and Tanul plays by telling numbers. Goutam says a number
+to Tanul. Tanul should first reverse the number and check if it is same as the original. If yes,
+Tanul should say “Palindrome”. If not, he should say “Not a Palindrome”. If the number is
+negative, print “Invalid Input”. Help Tanul by writing a program.
+Sample Input 1 :
+21212
+Sample Output 1 :
+Palindrome
+Sample Input 2 :
+6186
+
+Sample Output 2 :
+Not a Palindrome
+_____________________________________________________________________________________________
+CODE /*3 Palindrome*/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the Number to Check Palindrome");
+	int num=sc.nextInt();
+	int rem,sum=0;
+    int temp=num;
+    while(num>0){
+        rem=num%10;
+        sum=sum*10+rem;
+        num=num/10;
+    }
+    if (temp==sum){
+        System.out.println("Number is Palindrome ");
+    }
+    else if(num<0){
+        System.out.println("InValid Input");
+    }
+    else{
+        System.out.println("Number is Non Palindrome ");
+    }
+	    
+	}
+}
+
+________________________________________________________________________________________-
+Q5 : Problem Statement – Rhea Pandey’s teacher has asked her to prepare well for the
+lesson on seasons. When her teacher tells a month, she needs to say the season
+corresponding to that month. Write a program to solve the above task.
+Spring – March to May,
+Summer – June to August,
+Autumn – September to November and,
+Winter – December to February.
+Month should be in the range 1 to 12. If not the output should be “Invalid month”.
+
+Sample Input 1:
+Enter the month:11
+Sample Output 1:
+Season:Autumn
+Sample Input 2:
+Enter the month:13
+Sample Output 2:
+Invalid month 
+________________________________________________________
+CODE
+//5. Season Name
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);    
+	System.out.println("Enter the Number of the Month ");
+	int month=sc.nextInt();
+	if(month<1||month>12){System.out.println("INVALID MONTH ");}
+	else if(month>=3&&month<=5){System.out.println("THIS IS SPRING. Enjoy Scenerio of Beautiful Flowers!!");}
+	else if(month>=6&&month<=8){System.out.println("This is SUMMER. STAY Inside HOME !!");}
+	else if(month>=9&&month<=11){System.out.println("This is Autumn. Season of Mansoon ??? ");}
+    else if(month>=1&&month<=2||month==12){System.out.println("This is WINTER. ENJOY THE SNOWFALL");}
+	}}
+____________
+Q6: In a theater, there is a discount scheme announced where one gets a 10% discount
+on the total cost of tickets when there is a bulk booking of more than 20 tickets, and
+a discount of 2% on the total cost of tickets if a special coupon card is submitted.
+Develop a program to find the total cost as per the scheme. The cost of the k class
+ticket is Rs.75 and q class is Rs.150. Refreshments can also be opted by paying an
+additional of Rs. 50 per member.
+Hint: k and q and You have to book minimum of 5 tickets and maximum of 40 at a
+time. If fails display “Minimum of 5 and Maximum of 40 Tickets”. If circle is given a
+value other than ‘k’ or ‘q’ the output should be “Invalid Input”.
+The ticket cost should be printed exactly to two decimal places.
+Sample Input 1:
+Enter the no of ticket:35
+Do you want refreshment:y
+Do you have coupon code:y
+Enter the circle:k
+Sample Output 1:
+Ticket cost:4065.25
+Sample Input 2:
+Enter the no of ticket:1
+Sample Output 2:
+Minimum of 5 and Maximum of 40 Tickets
+_______________________________________________________________
+Code
+/*6 Tickets and Discount*/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int cost1=75;
+	int cost2=150;
+	System.out.println("Enter the Number of Tickets you Want to buy ");
+	int tickets=sc.nextInt();
+	System.out.println("Do you want Refreshement ? Select Y/N ('to Be Paid additionally') ");
+	char response1=sc.next().charAt(0);
+	System.out.println("Do you have th Limited Edition Coupon. (Select Y/N)");
+	char response2=sc.next().charAt(0);
+	System.out.println("Select the Category (K or Q)");
+	char category=sc.next().charAt(0);
+	while(tickets>5 && tickets<40){
+	if(tickets>=20 && tickets<40){if(category=='K'){
+	    if(response1=='Y' && response2=='N'){
+	        int refreshment_cost=(int)(50*tickets);
+	        int ticket_cost=(int)(cost1*tickets+refreshment_cost);
+	        System.out.println("Total Amount to be Paid= "+ticket_cost+" ");
+	    }
+	    else if(response1=='N' && response2=='Y'){
+	        int ticket_cost=(int)(cost1*tickets);
+	        float discount=(float)(ticket_cost*0.02);
+	        float revised_cost=ticket_cost-discount;
+	        System.out.println("Total Amount to be Paid = "+revised_cost+"");
+	    }
+	    else if (response1=='N' && response2=='N'){
+	        int ticket_cost=(int)(cost1*tickets);
+	        System.out.println("Total Amount to be Paid = "+ticket_cost+"");
+	    }
+	    else if(response1=='Y' && response2=='Y'){
+	        int ticket_cost=(int)(cost1*tickets);
+	        int refreshment_cost=(int)(50*tickets);
+	        float discount=(float)(ticket_cost*0.02);
+	        float revised_cost=ticket_cost-discount;
+	        float actual_cost=refreshment_cost+revised_cost;
+	        System.out.println("Total Amount to be Paid = "+actual_cost+"");
+	    }
+	    else{System.out.println("Invalid Response ");}
+	}
+	  else if(category=='Q'){if(response1=='Y' && response2=='N'){
+	        int refreshment_cost=(int)(50*tickets);
+	        int ticket_cost=(int)(cost1*tickets+refreshment_cost);
+	        System.out.println("Total Amount to be Paid= "+ticket_cost+" ");
+	    }
+	    else if(response1=='N' && response2=='Y'){
+	        int ticket_cost=(int)(cost1*tickets);
+	        float discount=(float)(ticket_cost*0.02);
+	        float revised_cost=ticket_cost-discount;
+	        System.out.println("Total Amount to be Paid = "+revised_cost+"");
+	    }
+	    else if (response1=='N' && response2=='N'){
+	        int ticket_cost=(int)(cost1*tickets);
+	        System.out.println("Total Amount to be Paid = "+ticket_cost+"");
+	    }
+	    else if(response1=='Y' && response2=='Y'){
+	        int ticket_cost=(int)(cost1*tickets);
+	        int refreshment_cost=(int)(50*tickets);
+	        float discount=(float)(ticket_cost*0.02);
+	        float revised_cost=ticket_cost-discount;
+	        float actual_cost=refreshment_cost+revised_cost;
+	        System.out.println("Total Amount to be Paid = "+actual_cost+"");
+	    }
+	    else{System.out.println("Invalid Response ");}
+}
+	}
+	else if (tickets>=5 && tickets<20){
+	    if(category=='K'){
+	        int ticket_cost=tickets*cost1;
+	        System.out.println("Total Amount to be Paid = "+ticket_cost+"");
+	    }
+	   else if(category=='Q'){
+	        int ticket_cost=tickets*cost2;
+	        System.out.println("Total Amount to be paid = "+ticket_cost+"");
+	    }
+	    else{System.out.println("Invalid Category. Please try again.");}}}
+	    while(tickets<=5 || tickets>=40){
+	    System.out.println("The Minimum count of tickets is 5 and Maximum Limit is 40 to Avail this offer. Thank You !!");}
+	    
+	}}
+____________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
