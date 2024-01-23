@@ -1,0 +1,285 @@
+1)Main constructor :multiplication 
+public class Main
+{
+    Main(){
+        int a=45;
+        int b=2;
+        System.out.println("Multiply of = " + a*b);
+        }
+	public static void main(String[] args) {
+	    Main a=new Main(); 
+	}
+}
+_________________________________________________________
+2)
+A class 
+constructor :addition 
+
+B class 
+constructor :sub
+
+C Class 
+constructor :multi
+
+Main class 
+constructor :div
+
+main method :access 
+-----------------------------------------------
+class A {
+   A(){
+        int a=34;
+        int b=45;
+        System.out.println("Addition of A+B = "+a+b);
+    }}
+    class B{
+        B(){int a=34;
+            int b=2;
+            System.out.println(a-b);
+        }
+    }
+    class c{
+        c(){
+            int a=23;
+            int b=3;
+            System.out.println("Multiply of A and B =" +a*b);
+        }
+    }
+    public class Main
+{
+    Main(){
+        int a=44;
+        int b=2;
+        System.out.println("Divison of = " + a/b);
+        }
+	public static void main(String[] args) {
+	    Main e=new Main();
+	    A obj=new A();
+	    B obj1=new B();
+	    c obj2=new c();
+	    
+	}
+}
+____________________________________________________________
+3) Main constructor :multiplication :parameterised constructor 
+user define 
+________________
+import java.util.*;
+public class Main
+{
+    Main(int b){
+        Scanner sc=new Scanner(System.in);
+       System.out.println("Enter the Value of A ");
+       int a=sc.nextInt();
+       int c=a*b;
+       System.out.println("Multiply of A and B is " +c);
+    }
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.println("Enter the Value of B ");
+       int b=sc.nextInt();
+       Main e=new Main(b);
+	  	}
+}
+_____________________________________________________________
+4)
+class A 
+constructor :default 
+show1 :add
+show2 :sub
+show3 :mul
+show4 :div 
+
+a)constant
+b)user input 
+______________________________
+import java.util.*;
+class A {
+    // no return and no argument
+    //with constant values
+    A() {}
+    void show1() {
+            int a=24;
+        int b=43;
+        System.out.println("Addition of A and B" +(a+b));
+    }
+
+    void show2() {
+        int a=34;
+        int b=22;
+        System.out.println("Substract of A-B ="+(a-b));
+    }
+    void show3() {
+        int a=33;
+        int b=22;
+        System.out.println("Multiply of A&B = "+(a*b));
+    }
+    void show4(){
+        int a=44;
+        int b=2;
+        System.out.println("Divide of A&B =" +(a/b));
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        A k = new A();
+        k.show1();
+        k.show2();
+        k.show3();
+        k.show4();
+    }
+}
+____________________________________________________
+import java.util.*;
+class A {
+    // no return and no argument
+    //with User Inputs
+    A() {}
+    void show1() {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Performing Addition ");
+        System.out.println("Enter the Value of A ");
+        int a=sc.nextInt();
+       System.out.println("Enter the Value of B ");
+       int b=sc.nextInt();
+       int c=a+b;
+       System.out.println("Addition of A and B = " +c);
+    }
+    void show2() {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Performing Substraction ");
+        System.out.println("Enter the Value of A ");
+        int a=sc.nextInt();
+       System.out.println("Enter the Value of B ");
+       int b=sc.nextInt();
+       int c=a-b;
+       System.out.println("Substraction of A and B = " +c);
+    }
+    void show3() {
+         Scanner sc=new Scanner(System.in);
+    System.out.println("Performing Multiply ");
+        System.out.println("Enter the Value of A ");
+        int a=sc.nextInt();
+       System.out.println("Enter the Value of B ");
+       int b=sc.nextInt();
+       int c=a*b;
+       System.out.println("Multiply of A and B = " +c);
+    }
+    void show4(){
+         Scanner sc=new Scanner(System.in);
+    System.out.println("Performing Division ");
+        System.out.println("Enter the Value of A ");
+        int a=sc.nextInt();
+       System.out.println("Enter the Value of B ");
+       int b=sc.nextInt();
+       int c=a/b;
+       System.out.println("Division of A and B = " +c);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        A k = new A();
+        k.show1();
+        k.show2();
+        k.show3();
+        k.show4();
+    }
+}
+____________________________________________________
+5)
+A class 
+constructor  
+show1
+show2
+
+B class 
+constructor  
+show3
+show4
+
+Main class 
+constructor
+show5
+show6
+
+main() :access   
+--------------------------------------------------------------
+import java.util.*;
+class A {
+    // no return and no argument
+    //with User Inputs
+    A() {}
+    void show1() {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Performing Addition ");
+        System.out.println("Enter the Value of A ");
+        int a=sc.nextInt();
+       System.out.println("Enter the Value of B ");
+       int b=sc.nextInt();
+       int c=a+b;
+       System.out.println("Addition of A and B = " +c);
+    }
+    void show2() {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Performing Substraction ");
+        System.out.println("Enter the Value of A ");
+        int a=sc.nextInt();
+       System.out.println("Enter the Value of B ");
+       int b=sc.nextInt();
+       int c=a-b;
+       System.out.println("Substraction of A and B = " +c);
+    }
+    
+}
+class B{
+    B(){}
+        void show3(){
+            Scanner sc=new Scanner(System.in);
+    System.out.println("Performing Multiply ");
+        System.out.println("Enter the Value of A ");
+        int a=sc.nextInt();
+       System.out.println("Enter the Value of B ");
+       int b=sc.nextInt();
+       int c=a*b;
+       System.out.println("Multiply of A and B = " +c);
+        
+        }
+        void show4(){
+            Scanner sc=new Scanner(System.in);
+    System.out.println("Performing Division ");
+        System.out.println("Enter the Value of A ");
+        int a=sc.nextInt();
+       System.out.println("Enter the Value of B ");
+       int b=sc.nextInt();
+       int c=a/b;
+       System.out.println("Division of A and B = " +c);
+        }
+}
+public class Main {
+Main(){}
+    void show5(){
+        System.out.println("HI ALL");
+    }
+    void show6(){
+        System.out.println("BYE ALL");
+    }
+
+    public static void main(String[] args) {
+        A k = new A();
+        k.show1();
+        k.show2();
+        B e=new B();
+        e.show3();
+        e.show4();
+        Main r=new Main();
+        r.show5();
+        r.show6();
+       
+    }
+}
+
+
