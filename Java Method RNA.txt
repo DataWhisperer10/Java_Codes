@@ -1,0 +1,166 @@
+Return and No Argument  using
+class A 
+short show1():
+byte 
+float 
+long 
+double 
+char 
+string 
+boolean 	
+covariant return type 
+
+constant 
+user input 
+____________________________
+//CONSTANT INPUT
+class A{
+    short show1(){
+        short a=2;
+        System.out.println(a);
+        return a;
+    }
+    byte show2(){
+        byte a=5;
+        System.out.println(a);
+        return a;
+    }
+    float show3(){
+        float a=34.23f;
+        float b=33.5f;
+        float c=a-b;
+        System.out.println(c);
+        return c;
+    }
+    long show4(){
+        long a=435355334;
+        long b=45223421;
+        long c=a+b;
+        System.out.println(c);
+        return c;
+    }
+    double show5(){
+        double a=34.2345345;
+        double b=45.6754322;
+        double c=a*b;
+        System.out.println(c);
+        return c;
+    }
+    char show6(){
+        char a='G';
+        System.out.println(a);
+        return a;
+    }
+    String show7(){
+        String a="Hello Gajanand !! ";
+        System.out.println(a);
+        return a;
+    }
+    boolean show8(){
+        boolean isTreeGreen=true;
+        System.out.println(isTreeGreen);
+        return isTreeGreen;
+    }
+     }
+public class Main
+{ Main show(){
+    System.out.println("GOOD LUCK");
+	    return this;
+}
+	public static void main(String[] args) {
+	    Main w=new Main();
+	    w.show();
+	A q=new A();
+	q.show1();
+	q.show2();
+	q.show3();
+	q.show4();
+	q.show5();
+	q.show6();
+	q.show7();
+	q.show8();
+	}
+}
+____________________________________
+//USER INPUT
+import java.util.*;
+class A{
+    short show1(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Type the Value of A (short) : ");
+    short a=sc.nextShort();
+    System.out.println(a);
+    return a;
+}
+byte show2(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the Value of A (byte Type) :");
+    byte a=sc.nextByte();
+    System.out.println(a);
+    return a;
+}
+float show3(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the Value of A (float type) :");
+    float a=sc.nextFloat();
+    System.out.println(a);
+    return a;
+    }
+long show4(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the Value of A :");
+    long a=sc.nextLong();
+    System.out.println(a);
+    return a;
+}
+double show5(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Type the Value of A (in Decimal): ");
+    double a=sc.nextDouble();
+    System.out.println(a);
+    return a;
+    }
+char show6(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the Value of A (Character) :");
+    char a=sc.next().charAt(0);
+    System.out.println(a);
+    return a;
+}
+String show7(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter Your Complete Name : ");
+    String s=sc.nextLine();
+    System.out.println(s);
+    return s;
+    }
+boolean show8(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter True of False");
+    boolean input=sc.nextBoolean();
+    System.out.println(input);
+    return input;
+    
+}
+}
+public class Main
+{
+    Main show(){
+        System.out.println("DOING WELL !!");
+        return this;
+    }
+	public static void main(String[] args) {
+		A w=new A();
+		w.show1();
+		w.show2();
+		w.show3();
+		w.show4();
+		w.show5();
+		w.show6();
+		w.show7();
+		w.show8();
+		Main e=new Main();
+		e.show();
+	}
+}
+_______________________________________
