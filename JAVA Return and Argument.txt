@@ -1,0 +1,309 @@
+return and argument :
+____________________________________
+1)
+Main class :
+add method:a+b 
+sub method:a-b 
+multi method:a*b 
+div method:a/b 
+mod method:a%b 
+----------------------------------------------
+//user input 
+import java.util.*;
+public class Main
+{
+    int add(int a, int b){
+        int c=a+b;
+        System.out.println("Sum of A+B is "+c);
+        return c;
+    }
+    int sub(int a,int b){
+        int c=a-b;
+        System.out.println("Substraction of A-B is "+c);
+        return c;
+    }
+    int multi(int a, int b){
+        int c=a*b;
+        System.out.println(c);
+        return c;
+    }
+    int div(int a,int b){
+        int c=a/b;
+        System.out.println(c);
+        return c;
+    }
+    int mod(int a, int b){
+        int c=a%b;
+        System.out.println(c);
+        return c;
+    }
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the Value of A : ");
+		int a=sc.nextInt();
+		System.out.println("Enter the Value of B : ");
+		int b=sc.nextInt();
+		Main w=new Main();
+		w.add(a,b);
+		w.sub(a,b);
+		w.multi(a,b);
+		w.div(a,b);
+		w.mod(a,b);
+	}
+}
+--------------------------------------------------
+2)
+A class :
+add method:a+b 
+
+B class 
+mod method:a%b 
+
+C class 
+div method:a/b 
+
+
+D class 
+multi method:a*b 
+
+E class
+sub method:a-b 
+
+Main class :access 
+
+user input  
+____________________
+import java.util.*;
+class A{
+    int add(int e,int b){
+        int c=e+b;
+        System.out.println(c);
+        return c;
+    }
+}
+class B{int mod(int e,int b){int c=e/b;System.out.println(c);return c;}}
+class C{int div(int e,int b){int c=e/b;System.out.println(c);return c;}}
+class D{int multi(int e,int b){int c=e*b;System.out.println(c);return c;}}
+class E{int sub(int e,int b){int c=e-b;System.out.println(c);return c;}}
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the Value of E : ");
+		int e=sc.nextInt();
+		System.out.println("Enter the Value of B : ");
+		int b=sc.nextInt();
+		A w=new A();
+		w.add(e,b);
+		E t=new E();
+	    t.sub(e,b);
+	    D y=new D();
+		y.multi(e,b);
+		C r=new C();
+		r.div(e,b);
+		B q=new B();
+		q.mod(e,b);
+	}
+}
+----------------------------------------------------
+3)
+Main class 
+method :factorial  
+method :armstrong
+method :pallindrome
+method :neon
+method :perfect
+method :voterid
+method :gender
+main method : access
+_____________________________
+import java.util.*;
+public class Main
+{
+    //to check the factorial
+    int fact(int n){
+        int fact=1;
+        for(int i=1;i<=n;i++){
+            fact=fact*i;
+        }
+        System.out.println("Factorial = "+fact);
+        return fact;
+    }
+   //to check the Neon Number 
+   int neon(int n){
+        int square = n * n;
+        int sumOfDigits = 0;
+        int temp = square;
+
+        // Calculate the sum of digits of the square
+        while (temp > 0) {
+            sumOfDigits += temp % 10;
+            temp=temp/10;
+        }
+
+        // Check if the sum of digits is equal to the original number
+        if (sumOfDigits == n) {
+            System.out.println(n + " is a Neon Number.");
+        } else {
+            System.out.println(n + " is not a Neon Number.");
+        }
+        return n;
+       
+   }
+   //to check the Perfect Number
+   int perfect(int n){
+        int sumOfDivisors=0;
+       int divisor=1;
+       while (divisor <= n / 2) {
+            if (n % divisor == 0) {
+                sumOfDivisors += divisor;
+            }
+            divisor++;
+        }
+
+        // Check if the sum of divisors is equal to the original number
+        if (sumOfDivisors == n) {
+            System.out.println(n + " is a Perfect Number.");
+        } else {
+            System.out.println(n + " is not a Perfect Number.");
+        }
+        return n;
+   }
+//Check if valid for VOTE
+   int age(int age){
+       if(age>=18){System.out.println("Valid to VOTE");}
+       else{System.out.println("Not Valid for VOTE");} 
+       return age;
+       }
+//check the GENDER
+       char gender(char gender){
+           if(gender=='F'||gender=='f'){System.out.println("FEMALE");}
+           else if(gender=='M'|| gender=='m'){System.out.println("MALE");}
+           else{System.out.println("Enter Valid Alphabet");}
+           return gender;
+       }
+//check if ARMSTRONG
+       int armstrong(int n){
+           int temp=n;
+           int arms=0;
+           int original=n;
+           while(n>0){
+               int digit=n%10;
+               temp=Math.pow(digit,3);
+               arms=arms+digit;
+               n=n/10;
+           }
+           if(arms==temp){System.out.println("ARMSTRONG");}
+           else{System.out.println("NOT ARMSTRONG");}
+           return n;
+       }
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the Value of n : ");
+		int n=sc.nextInt();
+	System.out.println("Enter Your age : ");
+	int age=sc.nextInt();
+	System.out.println("Enter First Alphabet of Your Gender (F or M) . ");
+	char gender=sc.next().charAt(0);
+		Main w=new Main();
+		w.fact(n);
+		w.neon(n);
+		w.perfect(n);
+		w.age(age);
+		w.gender(gender);
+		w.armstrong(n);
+	}
+}
+------------------------------------------------------
+4)
+Main class :
+add method:a+b :no return and no argument 
+sub method:a-b  :no return and  argument 
+multi method:a*b  : return and no argument 
+div method:a/b  : return and  argument 
+mod method:a%b : return and no argument 
+user input 
+___________________________________________________
+import java.util.*;
+public class Main
+{
+    //DIVISION USING RETURN AND ARGUMENT
+    int div(int a, int b){
+        int c=a/b;
+        System.out.println("DIVISION = "+c);
+        return c;
+    }
+    //MODULAR USING RETURN AND NO ARGUMENT
+    int Mod(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("A = ");
+        int a=sc.nextInt();
+        System.out.println("B = ");
+        int b=sc.nextInt();
+        int c=a%b;
+        System.out.println("MODULAR = "+c);
+        return c;
+    }
+    //ADD using NO RETURN and NO ARGUMENT
+    void Add(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Value of A = ");
+        int a=sc.nextInt();
+        System.out.println("Value of B = ");
+        int b=sc.nextInt();
+        int c=a+b;
+        System.out.println("ADD of A and B = "+c);
+    }
+    //SUBstract using NO RETURN and ARGUMENT
+    void Sub(int a, int b){
+        int c=a-b;
+        System.out.println("SUBstract of A-B = "+c);
+    }
+    //Multiplication using RETURN and NO ARGUMENT
+    int multi(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Value of P = ");
+        int p=sc.nextInt();
+        System.out.println("Enter Value of Q = ");
+        int q=sc.nextInt();
+        int r=p*q;
+        System.out.println("Multiplication of P*Q = "+r);
+        return r;
+    }
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Value of A : ");
+		int a=sc.nextInt();
+		System.out.println("Enter Value of B : ");
+		int b=sc.nextInt();
+		Main w=new Main();
+		w.div(a,b);
+		w.Mod();
+		w.Add();
+		w.Sub(a,b);
+		w.multi();
+	}
+}
+
+-----------------------------------------------
+5)
+class A 
+constructor :default :this is a constructor
+add method:a+b :no return and no argument 
+sub method:a-b  :no return and  argument 
+
+class B 
+constructor :parameter :a*b 
+mod method:a%b : return and no argument 
+multi method:a*b  : return and argument 
+
+
+Main class 
+Main constructor :parameter type 
+sub method:a-b  :no return and  argument 
+
+
+main method :
+A 
+B 
+Main class 
