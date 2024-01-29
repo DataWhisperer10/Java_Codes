@@ -1,0 +1,170 @@
+____________________________________________________________
+1) Problem Statement – FOE college wants to recognize the department which has
+succeeded in getting the maximum number of placements for this academic year.
+The departments that have participated in the recruitment drive are CSE,ECE,
+MECH. Help the college find the department getting maximum placements. Check
+for all the possible output given in the sample snapshot
+Note : If any input is negative, the output should be “Input is Invalid”. If all
+department has equal number of placements, the output should be “None of the
+department has got the highest placement”.
+Sample Input 1:
+Enter the no of students placed in CSE:90
+Enter the no of students placed in ECE:45
+Enter the no of students placed in MECH:70
+Sample Output 1:
+Highest placement
+CSE
+Sample Input 2:
+Enter the no of students placed in CSE:55
+Enter the no of students placed in ECE:85
+Enter the no of students placed in MECH:85
+Sample Output 2:
+Highest placement
+ECE
+MECH
+Sample Input 3:
+Enter the no of students placed in CSE:0
+Enter the no of students placed in ECE:0
+Enter the no of students placed in MECH:0
+Sample Output 3:
+
+None of the department has got the highest placement
+Sample Input 4:
+Enter the no of students placed in CSE:10
+Enter the no of students placed in ECE:-50
+Enter the no of students placed in MECH:40
+Sample Output 4:
+Input is Invalid
+__________________________________________________________________________________________________________________
+Code
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	   	System.out.println("Enter the Number of Students Placed in CSE : ");
+	   	int cse=sc.nextInt();
+	   	System.out.println("Enter the Number of Students Placed in ECE : ");
+	   	int ece=sc.nextInt();
+	   	System.out.println("Enter the Number of Students Placed in MECH : ");
+	   	int mech=sc.nextInt();
+	   	if(cse<0||ece<0||mech<0){System.out.println("Provide Valid Input. ");}
+	   	else if(cse>ece&&cse>mech){System.out.println("Highest Placement : CSE ");}
+	   	else if(ece>cse&&ece>mech){System.out.println("Highest Placement : ECE ");}
+	   	else if(mech>cse&&mech>ece){System.out.println("Highest Placement : MECH ");}
+	   	else if(mech==cse&&mech>ece){System.out.println("Highest Placement : MECH and CSE ");}
+	   	else if(mech==ece&&mech>cse){System.out.println("Highest Placement : MECH and ECE ");}
+	   	else if(ece==cse&&ece>mech){System.out.println("Highest Placement : ECE and CSE");}
+	   	else if(ece==cse&&cse==mech){System.out.println("NONE of the Department has got the Highest Placement ");}
+	   	}
+}
+_____________________________________________________________________________________________________
+
+2)
+Vohra went to a movie with his friends in a Wave theatre and during break time he
+bought pizzas, puffs and cool drinks. Consider the following prices :
+Rs.100/pizza
+Rs.20/puffs
+Rs.10/cooldrink
+Generate a bill for What Vohra has bought.
+Sample Input 1:
+Enter the no of pizzas bought:10
+Enter the no of puffs bought:12
+Enter the no of cool drinks bought:5
+Sample Output 1:
+Bill Details
+No of pizzas:10
+No of puffs:12
+No of cooldrinks:5
+Total price=1290
+ENJOY THE SHOW!!!
+______________________________________
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc= new Scanner(System.in);
+	    System.out.println("Pls select Integer Values for all inputs");
+	    System.out.println("Enter the Count of Pizza/s you want to Buy: ");
+	    int pizza=sc.nextInt();
+	    System.out.println("Enter the Count of Puff/s you want to Buy : ");
+	    int puff=sc.nextInt();
+	    System.out.println("Enter the Count of SoftDrinks you want to Buy : ");
+	    int softdrink=sc.nextInt();
+	    int cost_of_pizza=pizza*100;
+	    int cost_of_puff=puff*20;
+	    int cost_of_softdrink=softdrink*10;
+	    System.out.println("Here is the Bill Detials : ");
+	    System.out.println("Total Cost of Pizza : "+cost_of_pizza);
+	    System.out.println("Total Cost of Puff : "+cost_of_puff);
+	    System.out.println("Total Cost of SoftDrinks : "+cost_of_softdrink);
+	    System.out.println("GRAND TOTAL : "+(cost_of_softdrink+cost_of_puff+cost_of_pizza));
+	    System.out.println("THANK YOU FOR BUYING. ENJOY THE SHOW !!");
+	}
+}
+_______________________________________________________________________________________
+3)
+Problem Statement – Write a program to calculate the fuel consumption of your
+truck.The program should ask the user to enter the quantity of diesel to fill up the
+tank and the distance covered till the tank goes dry.Calculate the fuel consumption
+and display it in the format (liters per 100 kilometers).
+Convert the same result to the U.S. style of miles per gallon and display the result. If
+the quantity or distance is zero or negative display ” is an Invalid Input”.
+[Note: The US approach of fuel consumption calculation (distance / fuel) is the
+inverse of the European approach (fuel / distance ). Also note that 1 kilometer is
+0.6214 miles, and 1 liter is 0.2642 gallons.]
+The result should be with two decimal place.To get two decimal place refer the
+below-mentioned print statement :
+
+float cost=670.23;
+System.out.printf(“You need a sum of Rs.%.2f to cover the trip”,cost);
+Sample Input 1:
+Enter the no of liters to fill the tank
+20
+Enter the distance covered
+150
+Sample Output 1:
+Liters/100KM
+13.33
+Miles/gallons
+17.64
+Explanation:
+For 150 KM fuel consumption is 20 liters,
+Then for 100 KM fuel consumption would be (20/150)*100=13.33,
+Distance is given in KM, we have to convert it to miles (150*0.6214)=93.21,
+Fuel consumption is given in liters, we have to convert it to gallons
+(20*0.2642)=5.284,
+Then find (miles/gallons)=(93.21/5.284)=17.64
+Sample Input 2:
+Enter the no of liters to fill the tank
+-5
+Sample Output 2:
+-5 is an Invalid Input
+Sample Input 3:
+Enter the no of liters to fill the tank
+25
+Enter the distance covered
+-21
+__________________________________________________
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number of liters to fill the tank");
+		int liters=sc.nextInt();
+		System.out.println("Enter the distance covered");
+		int distance=sc.nextInt();
+		if(liters<=0||distance<=0){System.out.println("Invalid Input. Try by entering Valid Input");}
+		else if (liters>0||distance>0){
+		    float consumption=((float)liters/distance)*100;
+		    System.out.println("Liters/100 KM = "+consumption);
+		    //distance in kms; need to convert in miles
+		    float miles=distance*0.6214f;
+		    //fuel in liters; convert in Gallons
+		    float gallons=liters*0.2642f;
+		    float miles_gallons=miles/gallons;
+		    System.out.println("Miles/Gallons = "+miles_gallons);
+		}
+	}
+}
