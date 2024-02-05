@@ -1,0 +1,400 @@
+1) 
+A :parent
+add :method :no return and no argument 
+sub :method :no return and  argument 
+
+B :child 
+multi:method : return and no argument 
+div:method : return and  argument 
+
+Main 
+B k through all method access krogey 
+__________________
+import java.util.*;
+class A{/*add :method :no return and no argument 
+sub :method :no return and  argument */
+    void add(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the value of A ");
+        int a=sc.nextInt();
+        System.out.println("Enter the value of B ");
+        int b=sc.nextInt();
+        int c=a+b;
+        System.out.println("SUM OF A&B = "+c);
+    }
+    void sub(int d, int e){
+        int f=d-e;
+        System.out.println("Substract of D & E = "+f);
+    }
+}
+class B extends A{/*multi:method : return and no argument 
+div:method : return and  argument */
+    int multi(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the value of G");
+        int g=sc.nextInt();
+        System.out.println("Enter the value of H ");
+        int h=sc.nextInt();
+        int i=g*h;
+        System.out.println("Multi of G&H = "+i);
+        return i;
+    }
+    int div(int j, int k){
+        int l=j/k;
+        System.out.println("DIv of J/K = "+l);
+        return l;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the Value of J");
+        int j=sc.nextInt();
+        System.out.println("Enter the value of K ");
+        int k =sc.nextInt();
+        System.out.println("Enter the Value of D ");
+        int d=sc.nextInt();
+        System.out.println("Enter the value of E ");
+        int e=sc.nextInt();
+        B w=new B();
+        w.add();
+        w.sub(d,e);
+        w.multi();
+        w.div(j,k);
+    }
+}
+---------------------------------------------
+2) 
+A :parent
+add :method :no return and no argument 
+sub :method :no return and  argument 
+
+Main :child 
+multi:method : return and no argument 
+div:method : return and  argument 
+
+
+Main k through all method access krogey 
+user input 
+________________________
+import java.util.*;
+class A{/*add :method :no return and no argument 
+sub :method :no return and  argument */
+    void add(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Value of A");
+        int a=sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b=sc.nextInt();
+        int c=a+b;
+        System.out.println("SUM of A&B = "+c);
+    }
+    void sub(int d, int e){
+        int f=d-e;
+        System.out.println("Subst of D-E ="+f);
+    }
+}
+public class Main extends A {/*multi:method : return and no argument 
+div:method : return and  argument */
+int multi(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the Value of G = ");
+    int g=sc.nextInt();
+    System.out.println("Enter the value of H = ");
+    int h=sc.nextInt();
+    int i=g*h;
+    System.out.println("Multi of G & H ="+i);
+    return i;
+}
+int div(int j, int k){
+    int l=j/k;
+    System.out.println("Div of J/K ="+l);
+    return l;
+}
+public static void main(String[] args) {
+	    Scanner sc=new Scanner (System.in);
+	    System.out.println("Enter the value of D");
+	    int d=sc.nextInt();
+	    System.out.println("Enter the Value of E ");
+	    int e=sc.nextInt();
+	    System.out.println("Enter J ");
+	    int j=sc.nextInt();
+	    System.out.println(" K ");
+	    int k=sc.nextInt();
+	    Main q=new Main();
+	    q.add();
+	    q.sub(d,e);
+	    q.multi();
+	    q.div(j,k);
+	}
+}
+---------------------------------------------
+3)
+A :parent
+A() :multi:default
+add :method :no return and no argument 
+sub :method :no return and  argument 
+Main :child 
+multi:method : return and no argument 
+div:method : return and  argument 
+Main k through all method access krogey 
+User input 
+_____________________
+import java.util.*;
+class A{/*add :method :no return and no argument 
+sub :method :no return and  argument */
+A(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println(" AA ");
+    int aa=sc.nextInt();
+    System.out.println("AB ");
+    int ab=sc.nextInt();
+    int cb=aa*ab;
+    System.out.println("CLASS A wala Multi= "+cb);
+}
+    void add(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Value of A");
+        int a=sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b=sc.nextInt();
+        int c=a+b;
+        System.out.println("SUM of A&B = "+c);
+    }
+    void sub(int d, int e){
+        int f=d-e;
+        System.out.println("Subst of D-E ="+f);
+    }
+}
+public class Main extends A {/*multi:method : return and no argument 
+div:method : return and  argument */
+int multi(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the Value of G = ");
+    int g=sc.nextInt();
+    System.out.println("Enter the value of H = ");
+    int h=sc.nextInt();
+    int i=g*h;
+    System.out.println("Multi of G & H ="+i);
+    return i;
+}
+int div(int j, int k){
+    int l=j/k;
+    System.out.println("Div of J/K ="+l);
+    return l;
+}
+public static void main(String[] args) {
+	    A p=new A();
+	   	    Scanner sc=new Scanner (System.in);
+	    System.out.println("Enter the value of D");
+	    int d=sc.nextInt();
+	    System.out.println("Enter the Value of E ");
+	    int e=sc.nextInt();
+	    System.out.println("Enter J ");
+	    int j=sc.nextInt();
+	    System.out.println(" K ");
+	    int k=sc.nextInt();
+	    Main q=new Main();
+	    q.add();
+	    q.sub(d,e);
+	    q.multi();
+	    q.div(j,k);
+	}
+}
+_____________________________________________
+4)
+A :parent1
+add :method :no return and no argument  
+
+B :parent2 class 
+multi :method: return and no argument   
+
+C :child1 class 
+div :method: return and argument 
+ 
+D class :child2 
+sub :method:no return and argument 
+ 
+Main 
+dono child k through all method access krogey 
+user input
+_______________________________________________
+import java.util.*;
+class A{/*add :method :no return and no argument   */
+    void add(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Value of A");
+        int a=sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b=sc.nextInt();
+        int c=a+b;
+        System.out.println("SUM of A&B = "+c);
+    }}
+    class B{//multi :method: return and no argument   
+    int multi(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the Value of G = ");
+    int g=sc.nextInt();
+    System.out.println("Enter the value of H = ");
+    int h=sc.nextInt();
+    int i=g*h;
+    System.out.println("Multi of G & H ="+i);
+    return i;
+    }}
+    class C extends B{
+    int div(int d, int e){//div :method: return and argument
+        int f=d/e;
+        System.out.println("DIV of D/E ="+f);
+        return f;
+    }
+}
+class D extends A{//sub :method:no return and argument 
+    void sub(int j, int k){
+    int l=j-k;
+    System.out.println("SUB of J-K ="+l);
+}}
+public class Main {
+public static void main(String[] args) {
+    C t=new C();
+      Scanner sc=new Scanner (System.in);
+	    System.out.println("Enter the value of D");
+	    int d=sc.nextInt();
+	    System.out.println("Enter the Value of E ");
+	    int e=sc.nextInt();
+	    t.div(d,e);
+	    t.multi();
+	    System.out.println("Enter J ");
+	    int j=sc.nextInt();
+	    System.out.println(" K ");
+	    int k=sc.nextInt();
+	    D q=new D();
+	    q.add();
+	    q.sub(j,k);
+	        	}
+}
+--------------------------------------------
+5)
+A :parent
+add :method :no return and no argument  
+
+B :normal class 
+multi :method: return and no argument   
+
+C :normal class 
+div :method: return and argument 
+ 
+D class :child 
+sub :method:no return and argument 
+ 
+Main 
+child k through all method access krogey 
+user input
+____________________
+import java.util.*;
+class A{/*add :method :no return and no argument   */
+    void add(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Value of A");
+        int a=sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b=sc.nextInt();
+        int c=a+b;
+        System.out.println("SUM of A&B = "+c);
+    }}
+    class B{//multi :method: return and no argument   
+    int multi(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the Value of G = ");
+    int g=sc.nextInt();
+    System.out.println("Enter the value of H = ");
+    int h=sc.nextInt();
+    int i=g*h;
+    System.out.println("Multi of G & H ="+i);
+    return i;
+    }}
+    class C{
+    int div(int d, int e){//div :method: return and argument
+        int f=d/e;
+        System.out.println("DIV of D/E ="+f);
+        return f;
+    }
+}
+class D extends A{//sub :method:no return and argument 
+    void sub(int j, int k){
+    int l=j-k;
+    System.out.println("SUB of J-K ="+l);
+}}
+public class Main {
+public static void main(String[] args) {
+      Scanner sc=new Scanner (System.in);
+	    System.out.println("Enter the value of D");
+	    int d=sc.nextInt();
+	    System.out.println("Enter the Value of E ");
+	    int e=sc.nextInt();
+	    System.out.println("Enter J ");
+	    int j=sc.nextInt();
+	    System.out.println(" K ");
+	    int k=sc.nextInt();
+	     B p=new B();
+	     p.multi();
+	     C t=new C();
+	     t.div(d,e);
+	  
+	    D q=new D();
+	    q.add();
+	    q.sub(j,k);
+	    	}
+}
+-------------------------------------------------- 
+6)
+A class :parent 
+email 
+password 
+name 
+contact
+
+
+
+B class :child 
+addresss 
+stream :BCA BBA 
+language :english , hindi 
+percentage :float
+
+Main class 
+access 
+______________________________________
+import java.util.*;
+class A{
+    void Details(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter your Email Address");
+    String email=sc.nextLine();
+    System.out.println("Enter your Password (Alphabets Only) ");
+    String pass=sc.nextLine();
+    System.out.println("Enter your Complete Name ");
+    String name=sc.nextLine();
+    System.out.println("Enter your Contact Number ");
+    int contact=sc.nextInt();}
+}
+class B extends A{
+    void Details1(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter your Full Address ");
+    String address=sc.nextLine();
+    System.out.println("Type the Stream Name ");
+    String stream=sc.next();
+    System.out.println("Enter the Languages you Speak ");
+    String language=sc.nextLine();
+    System.out.println("Enter the Percentage you have Obtained ");
+    float per=sc.nextFloat();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        B t=new B();
+        t.Details();
+        t.Details1();
+            }
+}
+_______________________________________________________
