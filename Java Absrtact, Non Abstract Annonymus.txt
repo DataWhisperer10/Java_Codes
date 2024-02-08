@@ -1,0 +1,1093 @@
+1)
+class A :abstract type 
+add() :abstract method :no return and no argument 
+sub() :abstract method :no return and  argument 
+div() :abstract method : return and no argument 
+multi() :abstract method: return and  argument  
+mod() :abstract method :return and no argument 
+class B ex A
+Main class
+anonymous inner class 
+___________________________________
+import java.util.*;
+
+abstract class A {
+    abstract void add();            // no return and no argument
+    abstract void sub(int d, int e); // no return and argument
+    abstract int div();             // return and no argument
+    abstract int multi(int j, int k); // return and argument
+    abstract int mod();             // return and no argument
+}
+
+class B extends A {
+    void add() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of A ");
+        int a = sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b = sc.nextInt();
+        int c = a + b;
+        System.out.println("SUM = " + c);
+    }
+
+    void sub(int d, int e) {
+        int f = d - e;
+        System.out.println("Subtract = " + f);
+    }
+
+    int div() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of G ");
+        int g = sc.nextInt();
+        System.out.println("Enter the Value of H ");
+        int h = sc.nextInt();
+        int i = g / h;
+        System.out.println("Division = " + i);
+        return i;
+    }
+
+    int multi(int j, int k) {
+        int l = j * k;
+        System.out.println("Multi = " + l);
+        return l;
+    }
+
+    int mod() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of M ");
+        int m = sc.nextInt();
+        System.out.println("Enter the Value of N ");
+        int n = sc.nextInt();
+        int o = m % n;
+        System.out.println("Modular = " + o);
+        return o;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B q = new B();
+        q.add();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of D ");
+        int d = sc.nextInt();
+        System.out.println("Enter the Value of E ");
+        int e = sc.nextInt();
+        q.sub(d, e);
+        q.div();
+        System.out.println("Enter the Value of J ");
+        int j = sc.nextInt();
+        System.out.println("Enter the Value of K ");
+        int k = sc.nextInt();
+        q.multi(j, k);
+        q.mod();
+        A w = new A() {
+            void add() {
+                System.out.println("Anonymous ADD ");
+            }
+            void sub(int d, int e){
+                System.out.println(" Anno SUB");
+            }
+            int div(){
+                System.out.println("ANNO DIV ");
+                return 0;
+            }
+            int multi(int j, int k){
+                System.out.println(" Anno SUB");
+                return 0;
+            }
+            int mod(){
+                System.out.println("Anno MOD");
+                return 0;
+            }
+        };
+        w.add();
+        w.sub(0,0);
+        w.div();
+        w.multi(0,0);
+        w.mod();
+    }
+}
+--------------------------------------------------
+2)
+class A :abstract type 
+add() :abstract method :no return and no argument 
+sub() :abstract method :no return and  argument
+class B ex A
+class F ex A
+class C :abstract
+div() :abstract method : return and no argument 
+multi() :abstract method: return and  argument 
+class D ex C 
+class G ex D 
+class E :abstract
+mod() :abstract method :return and no argument 
+Main class ex E
+first way  
+anonymous inner class 
+__________________________________________
+import java.util.*;
+
+abstract class A {
+    abstract void add();            // no return and no argument
+    abstract void sub(int d, int e); // no return and argument
+}
+abstract class C{
+    abstract int div();             // return and no argument
+    abstract int multi(int j, int k); // return and argument
+}
+abstract class E{
+    abstract int mod();  // return and no argument
+}
+
+class B extends A {
+    void add() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of A ");
+        int a = sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b = sc.nextInt();
+        int c = a + b;
+        System.out.println("SUM = " + c);
+    }
+
+    void sub(int d, int e) {
+        int f = d - e;
+        System.out.println("Subtract = " + f);
+    }
+}
+class F extends A {
+    void add() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of A ");
+        int a = sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b = sc.nextInt();
+        int c = a + b;
+        System.out.println("SUM = " + c);
+    }
+
+    void sub(int d, int e) {
+        int f = d - e;
+        System.out.println("Subtract = " + f);
+    }
+}
+class D extends C{
+    int div() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of G ");
+        int g = sc.nextInt();
+        System.out.println("Enter the Value of H ");
+        int h = sc.nextInt();
+        int i = g / h;
+        System.out.println("Division = " + i);
+        return i;
+    }
+
+    int multi(int j, int k) {
+        int l = j * k;
+        System.out.println("Multi = " + l);
+        return l;
+    }
+}
+class G extends D{
+    int div() {
+        System.out.println("G Exteds D");
+        return 0;
+          }
+}
+public class Main{
+      int mod() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of M ");
+        int m = sc.nextInt();
+        System.out.println("Enter the Value of N ");
+        int n = sc.nextInt();
+        int o = m % n;
+        System.out.println("Modular = " + o);
+        return o;
+    }
+    public static void main(String[] args) {
+        F q = new F();
+        q.add();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of D ");
+        int d = sc.nextInt();
+        System.out.println("Enter the Value of E ");
+        int e = sc.nextInt();
+        q.sub(d, e);
+        //next
+        G y=new G();
+        y.div();
+        System.out.println("Enter the Value of J ");
+        int j = sc.nextInt();
+        System.out.println("Enter the Value of K ");
+        int k = sc.nextInt();
+        y.multi(j, k);
+        //next
+        Main u=new Main();
+        u.mod();
+        A w = new A() {
+            void add() {
+                System.out.println("Anonymous ADD ");
+            }
+            void sub(int d, int e){
+                System.out.println(" Anno SUB");
+            }};
+        w.add();
+        w.sub(0,0);
+        G p=new G(){
+            int div(){
+                System.out.println("ANNO DIV ");
+                return 0;
+            }
+            int multi(int j, int k){
+                System.out.println(" Anno SUB");
+                return 0;
+            }};
+        p.div();
+        p.multi(0,0);
+        Main r=new Main(){
+            int mod(){
+                System.out.println("Anno MOD");
+                return 0;
+            }
+        };
+        r.mod();
+    }
+}
+ 
+-------------------------------------
+3)
+class A :abstract type 
+add() :abstract method :no return and no argument 
+sub() :abstract method :no return and  argument
+class B ex A
+class F ex A
+class C :abstract
+div() :abstract method : return and no argument 
+multi() :abstract method: return and  argument 
+class D ex C 
+class G ex D 
+class E :abstract
+mod() :abstract method :return and no argument 
+Main class ex E
+second way// keeping parent class name with Obj and child class name with new keyword
+anonymous inner class 
+___________________________________________
+import java.util.*;
+
+abstract class A {
+    abstract void add();            // no return and no argument
+    abstract void sub(int d, int e); // no return and argument
+}
+abstract class C{
+    abstract int div();             // return and no argument
+    abstract int multi(int j, int k); // return and argument
+}
+abstract class E{
+    abstract int mod();  // return and no argument
+}
+
+class B extends A {
+    void add() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of A ");
+        int a = sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b = sc.nextInt();
+        int c = a + b;
+        System.out.println("SUM = " + c);
+    }
+
+    void sub(int d, int e) {
+        int f = d - e;
+        System.out.println("Subtract = " + f);
+    }
+}
+class F extends A {
+    void add() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of A ");
+        int a = sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b = sc.nextInt();
+        int c = a + b;
+        System.out.println("SUM = " + c);
+    }
+
+    void sub(int d, int e) {
+        int f = d - e;
+        System.out.println("Subtract = " + f);
+    }
+}
+class D extends C{
+    int div() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of G ");
+        int g = sc.nextInt();
+        System.out.println("Enter the Value of H ");
+        int h = sc.nextInt();
+        int i = g / h;
+        System.out.println("Division = " + i);
+        return i;
+    }
+
+    int multi(int j, int k) {
+        int l = j * k;
+        System.out.println("Multi = " + l);
+        return l;
+    }
+}
+class G extends D{
+    int div() {
+        System.out.println("G Exteds D");
+        return 0;
+       /* Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of G ");
+        int g = sc.nextInt();
+        System.out.println("Enter the Value of H ");
+        int h = sc.nextInt();
+        int i = g / h;
+        System.out.println("Division = " + i);
+        return i;
+    }
+
+    int multi(int j, int k) {
+        int l = j * k;
+        System.out.println("Multi = " + l);
+        return l;*/
+    }
+}
+public class Main{
+      int mod() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of M ");
+        int m = sc.nextInt();
+        System.out.println("Enter the Value of N ");
+        int n = sc.nextInt();
+        int o = m % n;
+        System.out.println("Modular = " + o);
+        return o;
+    }
+    public static void main(String[] args) {
+        /* #1 calling all methonds of an abstract class via keeping
+        parent class name with object and child class name with new keyword*/
+        A q = new F();
+        q.add();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of D ");
+        int d = sc.nextInt();
+        System.out.println("Enter the Value of E ");
+        int e = sc.nextInt();
+        q.sub(d, e);
+        //next Step
+        C y=new G();
+        y.div();
+        System.out.println("Enter the Value of J ");
+        int j = sc.nextInt();
+        System.out.println("Enter the Value of K ");
+        int k = sc.nextInt();
+        y.multi(j, k);
+        //next step
+        Main u =new Main();/*can not keep parent class name with object and Main with new keyword
+        coz Main will not convert to parent class. as we did in #1 comment*/
+        u.mod();
+        A w = new A() {
+            void add() {
+                System.out.println("Anonymous ADD ");
+            }
+            void sub(int d, int e){
+                System.out.println(" Anno SUB");
+            }};
+        w.add();
+        w.sub(0,0);
+        G p=new G(){
+            int div(){
+                System.out.println("ANNO DIV ");
+                return 0;
+            }
+            int multi(int j, int k){
+                System.out.println(" Anno SUB");
+                return 0;
+            }};
+        p.div();
+        p.multi(0,0);
+        Main r=new Main(){
+            int mod(){
+                System.out.println("Anno MOD");
+                return 0;
+            }
+        };
+        r.mod();
+    }
+}
+--------------------------------------------
+4)
+class A :abstract type 
+add() :abstract method :no return and no argument 
+sub() :abstract method :no return and  argument
+class B ex A
+class F ex A
+class C :abstract
+div() :abstract method : return and no argument 
+multi() :abstract method: return and  argument 
+class D ex C 
+class G ex D 
+class E :abstract
+mod() :abstract method :return and no argument 
+Main class ex E
+third way  // calling the values from Annonymus values
+anonymous inner class 
+__________________________________________________
+import java.util.*;
+
+abstract class A {
+    abstract void add();            // no return and no argument
+    abstract void sub(int d, int e); // no return and argument
+}
+abstract class C{
+    abstract int div();             // return and no argument
+    abstract int multi(int j, int k); // return and argument
+}
+abstract class E{
+    abstract int mod();  // return and no argument
+}
+
+class B extends A {
+    void add() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of A ");
+        int a = sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b = sc.nextInt();
+        int c = a + b;
+        System.out.println("SUM = " + c);
+    }
+
+    void sub(int d, int e) {
+        int f = d - e;
+        System.out.println("Subtract = " + f);
+    }
+}
+class F extends A {
+    void add() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of A ");
+        int a = sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b = sc.nextInt();
+        int c = a + b;
+        System.out.println("SUM = " + c);
+    }
+
+    void sub(int d, int e) {
+        int f = d - e;
+        System.out.println("Subtract = " + f);
+    }
+}
+class D extends C{
+    int div() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of G ");
+        int g = sc.nextInt();
+        System.out.println("Enter the Value of H ");
+        int h = sc.nextInt();
+        int i = g / h;
+        System.out.println("Division = " + i);
+        return i;
+    }
+
+    int multi(int j, int k) {
+        int l = j * k;
+        System.out.println("Multi = " + l);
+        return l;
+    }
+}
+class G extends D{
+    int div() {
+        System.out.println("G Exteds D");
+        return 0;
+    }
+
+    int multi(int j, int k) {
+        int l = j * k;
+        System.out.println("Multi = " + l);
+        return l;
+    }
+}
+public class Main{
+      int mod() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Value of M ");
+        int m = sc.nextInt();
+        System.out.println("Enter the Value of N ");
+        int n = sc.nextInt();
+        int o = m % n;
+        System.out.println("Modular = " + o);
+        return o;
+    }
+    public static void main(String[] args) {
+          A w = new A() {
+            void add() {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Value of A ");
+        int a = sc.nextInt();
+        System.out.println("Enter the Value of B ");
+        int b = sc.nextInt();
+        int c = a + b;
+        System.out.println("SUM = " + c);
+            }
+            void sub(int d, int e){
+                int f=d-e;
+                System.out.println("Substract  = "+e);
+            }};
+        w.add();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Value of D ");
+        int d = sc.nextInt();
+        System.out.println("Enter the Value of E ");
+        int e = sc.nextInt();
+        w.sub(d,e);
+        //
+        G p=new G(){
+            int div(){
+        System.out.println("Enter the Value of G ");
+        int g = sc.nextInt();
+        System.out.println("Enter the Value of H ");
+        int h = sc.nextInt();
+        int i = g / h;
+        System.out.println("Division = " + i);
+        return i;
+            }
+            int multi(int j, int k){
+                int l=j*k;
+                System.out.println(" Multiplication ="+l);
+                return l;
+            }};
+        p.div();
+        System.out.println("Enter the Value of J ");
+        int j = sc.nextInt();
+        System.out.println("Enter the Value of K ");
+        int k = sc.nextInt();
+        p.multi(j,k);
+        Main r=new Main(){
+            int mod(){
+        System.out.println("Enter the Value of M ");
+        int m = sc.nextInt();
+        System.out.println("Enter the Value of N ");
+        int n = sc.nextInt();
+        int o = m % n;
+        System.out.println("Modular = " + o);
+        return o;
+            }
+        };
+        r.mod();
+    }
+}
+
+
+-------------------------------------------------
+5)
+class A :abstract type 
+add() :non method :no return and no argument 
+sub() :abstract method :no return and  argument 
+div() :non method : return and no argument 
+multi() :abstract method: return and  argument  
+mod() :non method :return and no argument 
+class B ex A
+Main class
+anonymous inner class 
+user input 
+_________________________________________________
+import java.util.*;
+abstract class A{
+    void add(){//no return and no argument
+        Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of A ");
+           int a=sc.nextInt();
+           System.out.println("Enter the Value of B ");
+           int b= sc.nextInt();
+           int c= a+b;
+           System.out.println("SUM = "+c);
+        } 
+    abstract void sub(int d, int e); //no return and  argument
+    int div(){// return and no argument
+       Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of G ");
+           int g=sc.nextInt();
+           System.out.println("Enter the Value of H ");
+           int h= sc.nextInt();
+           int i= g/h;
+           System.out.println("Division = "+i);
+           return i;
+    }
+    abstract int multi(int j, int k);// return and  argument
+    int mod(){//return and no argument 
+    Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of M ");
+           int m=sc.nextInt();
+           System.out.println("Enter the Value of N ");
+           int n=sc.nextInt();
+           int o= m%n;
+           System.out.println("Modular = "+o);
+           return o;
+    }
+   }
+   class B extends A{
+       void sub(int d, int e){
+           int f=d-e;
+           System.out.println("Substract  = "+e);
+          }
+          int multi(int j, int k){
+              int l=j*k;
+              System.out.println("Multiplication = "+l);
+              return l;
+          }
+       }
+public class Main
+{
+	public static void main(String[] args) {
+		B w=new B();
+		w.add();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the value of D");
+		int d=sc.nextInt();
+		System.out.println("Enter the value of E");
+		int e=sc.nextInt();
+		w.sub(d,e);
+		w.div();
+		System.out.println("Enter the value of J");
+		int j=sc.nextInt();
+		System.out.println("Enter the value of K ");
+		int k=sc.nextInt();
+		w.multi(j,k);
+		w.mod();
+		A y=new A(){
+		    void add(){
+		        System.out.println("Anno Add");
+		    }
+		    void sub(int d, int e){
+		        System.out.println("Anno Sub ");
+		        }
+		    int div(){
+		        System.out.println("Anno div");
+		        return 0;
+		    }
+		    int multi(int j , int k){
+		        System.out.println("Anno Multi");
+		        return 0;
+		    }
+		    int mod(){
+		        System.out.println("Anno Mod ");
+		        return 0;
+		    }
+		};
+		y.add();
+		y.sub(0,0);
+		y.div();
+		y.multi(0,0);
+		y.mod();
+	}
+}
+------------------------------------
+6)
+class A :abstract type 
+add() :non abstract method :no return and no argument 
+sub() :abstract method :no return and  argument
+class B ex A
+class F ex A
+class C :abstract
+div() :non abstract method : return and no argument 
+multi() :abstract method: return and  argument 
+class D ex C 
+class G ex D 
+class E :abstract
+mod() :abstract method :return and no argument 
+Main class ex E
+first way  // Calling through Child class
+anonymous inner class 
+____________________________________________
+import java.util.*;
+abstract class A{
+    void add(){//no return and no argument
+        Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of A ");
+           int a=sc.nextInt();
+           System.out.println("Enter the Value of B ");
+           int b= sc.nextInt();
+           int c= a+b;
+           System.out.println("SUM = "+c);
+        } 
+    abstract void sub(int d, int e); //no return and  argument
+}
+abstract class C{
+    int div(){// return and no argument
+       Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of G ");
+           int g=sc.nextInt();
+           System.out.println("Enter the Value of H ");
+           int h= sc.nextInt();
+           int i= g/h;
+           System.out.println("Division = "+i);
+           return i;
+    }
+    abstract int multi(int j, int k);// return and  argument
+}
+abstract class E{
+    abstract int mod();//return and no argument 
+    
+    
+   }
+   class B extends A{
+       void sub(int d, int e){
+           int f=d-e;
+           System.out.println("Substract  = "+e);
+          }}
+    class F extends A{
+         void sub(int d, int e){
+           int f=d-e;
+           System.out.println("Substract  = "+e);
+   }}
+   class D extends C{
+          int multi(int j, int k){
+              int l=j*k;
+              System.out.println("Multiplication = "+l);
+              return l;
+          }
+       }
+       class G extends D{
+           void show(){
+               System.out.println("G extends D");
+           }
+       }
+public class Main{
+    int mod(){
+    Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of M ");
+           int m=sc.nextInt();
+           System.out.println("Enter the Value of N ");
+           int n=sc.nextInt();
+           int o= m%n;
+           System.out.println("Modular = "+o);
+           return o;}
+	public static void main(String[] args) {
+		F w=new F();
+		w.add();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the value of D");
+		int d=sc.nextInt();
+		System.out.println("Enter the value of E");
+		int e=sc.nextInt();
+		w.sub(d,e);
+		G y= new G();
+		y.div();
+		System.out.println("Enter the value of J");
+		int j=sc.nextInt();
+		System.out.println("Enter the value of K ");
+		int k=sc.nextInt();
+		y.multi(j,k);
+		Main u=new Main();
+		u.mod();
+		A q=new A(){
+		    void add(){
+		        System.out.println("Anno Add");
+		    }
+		    void sub(int d, int e){
+		        System.out.println("Anno Sub ");
+		        }};
+		 C r=new C(){      
+		    int div(){
+		        System.out.println("Anno div");
+		        return 0;
+		    }
+		    int multi(int j , int k){
+		        System.out.println("Anno Multi");
+		        return 0;
+		    }};
+		  E t=new E(){  
+		    int mod(){
+		        System.out.println("Anno Mod ");
+		        return 0;
+		    }
+		};
+		q.add();
+		q.sub(0,0);
+		r.div();
+		r.multi(0,0);
+	    t.mod();
+	}
+}
+
+-------------------------------------
+7)
+class A :abstract type 
+add() :non abstract method :no return and no argument 
+sub() :abstract method :no return and  argument
+class B ex A
+class F ex A
+class C :abstract
+div() :non abstract method : return and no argument 
+multi() :abstract method: return and  argument 
+class D ex C 
+class G ex D 
+class E :abstract
+mod() :abstract method :return and no argument 
+Main class ex E
+second way //calling by parent name with object id 
+anonymous inner class 
+________________________________________________
+import java.util.*;
+abstract class A{
+    void add(){//no return and no argument
+        Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of A ");
+           int a=sc.nextInt();
+           System.out.println("Enter the Value of B ");
+           int b= sc.nextInt();
+           int c= a+b;
+           System.out.println("SUM = "+c);
+        } 
+    abstract void sub(int d, int e); //no return and  argument
+}
+abstract class C{
+    int div(){// return and no argument
+       Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of G ");
+           int g=sc.nextInt();
+           System.out.println("Enter the Value of H ");
+           int h= sc.nextInt();
+           int i= g/h;
+           System.out.println("Division = "+i);
+           return i;
+    }
+    abstract int multi(int j, int k);// return and  argument
+}
+abstract class E{
+    abstract int mod();//return and no argument 
+    
+    
+   }
+   class B extends A{
+       void sub(int d, int e){
+           int f=d-e;
+           System.out.println("Substract  = "+e);
+          }}
+    class F extends A{
+         void sub(int d, int e){
+           int f=d-e;
+           System.out.println("Substract  = "+e);
+   }}
+   class D extends C{
+          int multi(int j, int k){
+              int l=j*k;
+              System.out.println("Multiplication = "+l);
+              return l;
+          }
+       }
+       class G extends D{
+           void show(){
+               System.out.println("G extends D");
+           }
+       }
+public class Main{
+    int mod(){
+    Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of M ");
+           int m=sc.nextInt();
+           System.out.println("Enter the Value of N ");
+           int n=sc.nextInt();
+           int o= m%n;
+           System.out.println("Modular = "+o);
+           return o;}
+	public static void main(String[] args) {
+	    /* #1 calling all methonds of an abstract class via keeping
+        parent class name with object and child class name with new keyword*/
+		A w=new F();
+		w.add();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the value of D");
+		int d=sc.nextInt();
+		System.out.println("Enter the value of E");
+		int e=sc.nextInt();
+		w.sub(d,e);
+		C y= new G();
+		y.div();
+		System.out.println("Enter the value of J");
+		int j=sc.nextInt();
+		System.out.println("Enter the value of K ");
+		int k=sc.nextInt();
+		y.multi(j,k);
+		Main u=new Main();/*can not keep parent class name with object and Main with new keyword
+        coz Main will not convert to parent class. as we did in #1 comment*/
+		u.mod();
+		A q=new A(){
+		    void add(){
+		        System.out.println("Anno Add");
+		    }
+		    void sub(int d, int e){
+		        System.out.println("Anno Sub ");
+		        }};
+		 C r=new C(){      
+		    int div(){
+		        System.out.println("Anno div");
+		        return 0;
+		    }
+		    int multi(int j , int k){
+		        System.out.println("Anno Multi");
+		        return 0;
+		    }};
+		  E t=new E(){  
+		    int mod(){
+		        System.out.println("Anno Mod ");
+		        return 0;
+		    }
+		};
+		q.add();
+		q.sub(0,0);
+		r.div();
+		r.multi(0,0);
+	    t.mod();
+	}
+}
+ 
+--------------------
+8)
+class A :abstract type 
+add() :non abstract method :no return and no argument 
+sub() :abstract method :no return and  argument
+class B ex A
+class F ex A
+class C :abstract
+div() :non abstract method : return and no argument 
+multi() :abstract method: return and  argument 
+class D ex C 
+class G ex D 
+class E :abstract
+mod() :abstract method :return and no argument 
+Main class ex E
+third way  //by annonymous call
+anonymous inner class 
+user input 
+---------------------------------------------------
+import java.util.*;
+abstract class A{
+    void add(){//no return and no argument
+        Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of A ");
+           int a=sc.nextInt();
+           System.out.println("Enter the Value of B ");
+           int b= sc.nextInt();
+           int c= a+b;
+           System.out.println("SUM = "+c);
+        } 
+    abstract void sub(int d, int e); //no return and  argument
+}
+abstract class C{
+    int div(){// return and no argument
+       Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of G ");
+           int g=sc.nextInt();
+           System.out.println("Enter the Value of H ");
+           int h= sc.nextInt();
+           int i= g/h;
+           System.out.println("Division = "+i);
+           return i;
+    }
+    abstract int multi(int j, int k);// return and  argument
+}
+abstract class E{
+    abstract int mod();//return and no argument 
+    
+    
+   }
+   class B extends A{
+       void sub(int d, int e){
+           int f=d-e;
+           System.out.println("Substract  = "+e);
+          }}
+    class F extends A{
+         void sub(int d, int e){
+           int f=d-e;
+           System.out.println("Substract  = "+e);
+   }}
+   class D extends C{
+          int multi(int j, int k){
+              int l=j*k;
+              System.out.println("Multiplication = "+l);
+              return l;
+          }
+       }
+       class G extends D{
+           void show(){
+               System.out.println("G extends D");
+           }
+       }
+public class Main{
+    int mod(){
+    Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of M ");
+           int m=sc.nextInt();
+           System.out.println("Enter the Value of N ");
+           int n=sc.nextInt();
+           int o= m%n;
+           System.out.println("Modular = "+o);
+           return o;}
+	public static void main(String[] args) {
+	    A q=new A(){
+		    void add(){
+		  Scanner sc=new Scanner(System.in);
+           System.out.println("Enter the value of A ");
+           int a=sc.nextInt();
+           System.out.println("Enter the Value of B ");
+           int b= sc.nextInt();
+           int c= a+b;
+           System.out.println("SUM = "+c);
+		    }
+		  void sub(int d, int e){
+		   int f=d-e;
+		  System.out.println("Substract = "+f);
+		        }};
+		 q.add();
+		 Scanner sc=new Scanner(System.in);
+		 System.out.println("Enter the Value of D");
+		 int d=sc.nextInt();
+		 System.out.println("Enter the value of E");
+		 int e=sc.nextInt();
+		 q.sub(d,e);
+		 C r=new C(){      
+		    int div(){
+		   System.out.println("Enter the value of G ");
+           int g=sc.nextInt();
+           System.out.println("Enter the Value of H ");
+           int h= sc.nextInt();
+           int i= g/h;
+           System.out.println("Division = "+i);
+           return i;
+		    }
+		    int multi(int j , int k){
+		       int l=j*k;
+		       System.out.println("Multiplication = "+l);
+		       return l;
+		    }};
+		  r.div();
+		  System.out.println("Enter the value of J ");
+           int j=sc.nextInt();
+           System.out.println("Enter the Value of K ");
+           int k= sc.nextInt();
+		r.multi(j,k);
+		   E t=new E(){  
+		   int mod(){
+		        System.out.println("Enter the value of M ");
+           int m=sc.nextInt();
+           System.out.println("Enter the Value of N ");
+           int n=sc.nextInt();
+           int o= m%n;
+           System.out.println("Modular = "+o);
+           return o;}
+		};
+	   t.mod();
+	}
+}
+
+	
