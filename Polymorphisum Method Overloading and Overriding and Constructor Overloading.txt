@@ -1,0 +1,167 @@
+1)
+class A 
+void show()
+
+void show()
+
+void show()
+
+overload 
+__________________________________
+class A{
+    void show(){
+        System.out.println("Hello");
+    }
+    void show(){
+        System.out.println("NOt Hello");
+    }
+    void show(){
+        System.out.println(" OKAY ");
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		A q=new A();
+		q.show();
+		q.show();
+		q.show();
+	}
+}//this is Method overload
+//where in a class, method name are same.
+//to solve method overload, we will increase or/and change the parameters.
+class A{
+    void show(){
+        System.out.println("Hello");
+    }
+    void show(int a){
+        System.out.println("Value of A = "+a);
+        System.out.println("NOt Hello");
+    }
+    void show(int b, int a){
+        System.out.println(b+"  Values of A and B "+a);
+        System.out.println(" OKAY ");
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		A q=new A();
+		q.show();
+		q.show(23);
+		q.show(43,65);
+	}
+}		
+--------------
+2)
+class A
+void show
+
+
+class B 
+void show
+
+override & overhide
+_______________________
+class A{
+    void show(){
+        System.out.println("Class A ");
+    }
+}
+class B extends A{
+    void show(){
+    System.out.println("Class B");}
+    
+}
+public class Main
+{
+	public static void main(String[] args) {
+	B w=new B();
+	w.show();
+	}
+}//this is method override
+//Class name is different but method names are same 
+//to remove this, we use "super" keyword.
+class A{
+    void show(){
+        System.out.println("Class A ");
+    }
+    void show1(){
+        System.out.println("Show12");
+    }
+}
+class B extends A{
+    void show(){
+        super.show();
+    System.out.println("Class B");}
+    void show1(){
+        super.show1();
+    System.out.println("Show1");}
+}
+public class Main
+{
+	public static void main(String[] args) {
+	B w=new B();
+	w.show();
+	w.show1();
+	}
+}
+________________
+//method overhiding
+class A{
+    static void show(){
+        System.out.println("Hello Java");
+    }
+}
+class B extends A{
+    static void show(){
+        System.out.println("Hi Java");
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	B q=new B();
+	q.show();
+	}
+}
+---------------------
+3)
+class A
+A()
+
+A()
+A()
+A()
+
+constructor overloading 
+this method 
+___________________________
+class A{
+    A(){System.out.println("HI");}
+    A(){System.out.println("HELLO");}
+    A(){System.out.println("JAVA");}
+}
+public class Main
+{
+	public static void main(String[] args) {
+	new A();
+	}
+}//this is constructor overloading.
+//to prevent this, we increase and/or change parameter values.
+class A{
+    A(){System.out.println("A Constructor");}
+    A(int a){System.out.println(a);}
+    A(float b){System.out.println(b);}
+    A(int a,int b){System.out.println(a+"  "+b);}
+}
+public class Main
+{
+	public static void main(String[] args) {
+	new A();
+	new A(2);
+	new A(23.443f);
+	new A (23,45);
+	}
+}
